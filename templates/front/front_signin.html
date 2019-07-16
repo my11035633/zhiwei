@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <title>登陆页面</title>
+    <script src="http://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+    <link href="http://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <script src="http://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script  src="{{ url_for("static",filename="common/zlajax.js") }}"></script>
+    <script  src="{{ url_for("static",filename="common/sweetalert/sweetalert.min.js") }}"></script>
+    <script  src="{{ url_for("static",filename="common/sweetalert/xtalert.js") }}"></script>
+    <link rel="stylesheet" href ="{{ url_for("static", filename="common/sweetalert/sweetalert.css") }}">
+    <script src="{{ url_for("static",filename="front/front_signin.js") }}"></script>
+    <style>
+        .box{width:300px;
+            height:600px;
+            margin:0 auto;
+             margin-top:60px;
+            overflow:hidden;
+        }
+
+        body{
+            background-image: url("/static/common/images/ranran.jpg");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size:100% auto;
+
+        }
+        .form-container{margin-top: -16px;
+                height:300px;
+            }
+        h2{text-align: center;}
+
+        .image a {
+             display: inline-block;
+             border: 1px solid #f1f4f5;
+             width: 90px;
+             height: 90px;
+             border-radius: 50%;
+             overflow: hidden;
+        }
+        .image {
+            text-align: center;
+        }
+        .image a img {
+            width:90px;
+            height:90px;
+            padding-bottom: 1px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="image">
+            <a href="/">
+                <img src="{{url_for("static",filename="common/images/logo2.jpg")}}" alt="">
+            </a>
+        </div>
+
+        <div class="form-container">
+
+            <h2>旧岛</h2>
+            <div class="form-group">
+                <input type="text" id="tele" name="telephone" class="form-control" placeholder="手机号码">
+            </div>
+            <div class="form-group">
+                <input type="text" name="password" class="form-control" placeholder="密码">
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" name="remember" value="1">记住我
+                </label>
+            </div>
+              <div class="form-group">
+                <button class="btn btn-primary btn-block" id="submit_signin">登陆</button>
+                <span style="display: none;" id="return_to_span">{{ return_to }}</span>
+            </div>
+
+            <div class="form-group">
+                <a href="{{ url_for("front.signup") }}" class="signup-link"> 没有账号？立即注册</a>
+                <a href="#" class="resetpwd-link" >找回密码</a>
+            </div>
+
+
+
+
+
+        </div>
+
+
+    </div>
+
+
+</body>
+</html>

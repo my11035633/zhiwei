@@ -1,0 +1,66 @@
+{% extends "front/front_base.html" %}
+
+{% block title %}
+    帖子详情页面
+
+{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="{{ url_for("static", filename="front/css/front_postdetail.css") }}">
+     <script src="{{ url_for("static", filename="ueditor/ueditor.config.js") }}"></script>
+     <script src="{{ url_for("static", filename="ueditor/ueditor.all.min.js") }}"></script>
+    <script src="{{ url_for("static",filename="front/front_comment.js") }}"></script>
+{% endblock %}
+
+{% block body %}
+    <div class="lg-container">
+        <div class="post-container">
+            <h2>{{ post.title }}</h2>
+            <p class="post-info-group">
+                <span>发表时间:{{ post.create_time }}</span>
+                <span>作者:{{ post.author.username }}</span>
+                <span>所属的板块:{{ post.board.name }}</span>
+                <span>评论数:0</span>
+            </p>
+            <hr>
+            <article class="post-content" id="article" data-postid="{{ post.id }}">
+                {{ post.content|safe }}
+            </article>
+        </div>
+        <div class="commnet-group">
+                <h4>评论列表</h4>
+                <ul class="comment-list-group" >
+                    {% for comment in post.comments %}
+                        <li class="mainli">
+                            <div class="avatar">
+                             <img  src="{{ comment.author.avatar or url_for("static",filename="common/images/logo.png") }}" alt="">
+                            </div>
+                            <div class="comment-content">
+                                <p class="comment-info">
+                                    <span>{{ comment.author.username }}</span>
+                                    <span>{{ comment.create_time }}</span>
+                                </p>
+                                <p class="comment-tex">
+                                    {{ comment.content|safe }}
+                                </p>
+                                <hr style="width: 100%;">
+                            </div>
+                        </li>
+                    {% endfor %}
+
+                </ul>
+
+        </div>
+        <div class=" ueditor" style="height: 300px;">
+            <script id="editor" type="text/plain" ></script>
+             <button class="btn btn-primary" id="submit">发表评论</button>
+        </div>
+
+
+    </div>
+
+    <div class="sm-container">
+
+    </div>
+
+{% endblock %}

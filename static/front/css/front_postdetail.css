@@ -1,0 +1,74 @@
+
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, /* structural elements 结构元素 */
+dl, dt, dd, ul, ol, li, /* list elements 列表元素 */
+pre, /* text formatting elements 文本格式元素 */
+form, fieldset, legend, button, input, textarea, /* form elements 表单元素 */
+th, td /* table elements 表格元素 */
+{
+    margin: 0;
+    padding: 0;
+}
+.post-container{
+    border:1px solid white;
+}
+
+.post-info-group{
+    margin-top: 10px;
+
+}
+
+.post-info-group span{
+    margin-right: 60px;
+}
+
+
+.post-content img{
+    width:100%;
+    background-size: 100%;
+}
+
+#submit{
+    margin-top: 10px;
+    float:right;
+
+}
+
+
+.avatar-group img{
+    width:10px;
+    height:10px;
+}
+
+.avatar img{
+    width:50px;
+    height:50px;
+    border-radius: 1px;
+}
+
+.avatar{
+    float:left;
+}
+
+.comment-content{
+    float:left;
+    padding-left: 10px;
+}
+
+.mainli{
+    overflow: hidden;
+    padding-top: 10px;
+}
+
+.comment-info span {
+   margin-right:10px;
+
+}
+
+.comment-tex{
+    margin-top: 10px;
+}
+
+
+
+
+

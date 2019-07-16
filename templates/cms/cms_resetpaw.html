@@ -1,0 +1,50 @@
+{% extends "cms/cms_base.html" %}
+
+{% block head %}
+    <script  src="{{ url_for("static" ,filename="cms/js/resetpaw.js") }}"></script>
+
+{% endblock %}
+
+
+
+
+{% block title%}
+    修改密码
+{% endblock %}
+
+{% block page_title %}
+    修改密码
+{% endblock %}
+
+{% block content %}
+    <style>
+        .form-container{width:300px;}
+    </style>
+    <form action="" method="post">
+        <div class="form-container">
+            <div class="form-group">
+                <div class="input-group">
+                    <span class="input-group-addon">旧密码</span>
+                     <input class="form-control" type="password" name="oldpaw" placeholder="旧密码">
+                </div>
+            </div>
+            <div class="form-group">
+                 <div class="input-group">
+                    <span class="input-group-addon">新密码</span>
+                     <input class="form-control" type="password" name="newpaw" placeholder="新密码">
+                 </div>
+            </div>
+            <div class="form-group">
+                <div class="input-group">
+                    <span class="input-group-addon">确认密码</span>
+                    <input class="form-control" type="password" name="oldpaw2" placeholder="确认密码">
+                </div>
+            </div>
+        </div>
+            <div class="form-group">
+                <button class="btn btn-primary"  id="submit">立即保存</button>
+            </div>
+
+         <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+    </form>
+{% endblock %}

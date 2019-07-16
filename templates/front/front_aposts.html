@@ -1,0 +1,44 @@
+{% extends "front/front_base.html" %}
+{% block title %}
+    发布帖子
+{% endblock %}
+
+{% block head %}
+    <script src="{{ url_for("static", filename="ueditor/ueditor.config.js") }}"></script>
+    <script src="{{ url_for("static", filename="ueditor/ueditor.all.min.js") }}"></script>
+    <script src="{{ url_for("static", filename="front/front_aposts.js") }}"></script>
+    <script src="https://cdn.staticfile.org/Plupload/2.1.1/moxie.js"></script>
+    <script src="https://cdn.staticfile.org/Plupload/2.1.1/plupload.dev.js"></script>
+    <script src="https://cdn.staticfile.org/qiniu-js-sdk/1.0.14-beta/qiniu.js"></script>
+     <script src="{{ url_for('static',filename='common/zlqiniu.js') }}"></script>
+{% endblock %}
+
+{% block body %}
+    <form action="" method="post">
+    <div class="form-container">
+        <div class="form-group">
+            <div class="input-group">
+                <span class="input-group-addon">标题</span>
+                <input type="text" name="title" class="form-control" placeholder="请输入标题">
+            </div>
+        </div>
+            <div class="form-group">
+                <div class="input-group">
+                    <span class="input-group-addon">板块</span>
+                    <select class="form-control" name="board-id" >
+                        {% for board in boards %}
+                             <option value="{{ board.id }}">{{ board.name }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+             </div>
+             <div class="form-group" >
+                 <script id="editor" type="text/plain" ></script>
+             </div>
+             <div  class="form-group">
+                <button class="btn btn-danger" id="submitposts">发布帖子</button>
+             </div>
+
+        </div>
+</form>
+{% endblock %}

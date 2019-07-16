@@ -1,0 +1,55 @@
+{% extends "front/front_base.html" %}
+
+{% block  title %}
+    个人中心
+
+{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet"  href="{{ url_for("static",filename="front/css/front_pcenter.css") }}">
+    <script src="{{ url_for("static", filename="ueditor/ueditor.config.js") }}"></script>
+     <script src="{{ url_for("static", filename="ueditor/ueditor.all.min.js") }}"></script>
+    <script src="{{ url_for("static",filename="front/front_pcenter.js") }}"></script>
+    <script src="https://cdn.staticfile.org/Plupload/2.1.1/moxie.js"></script>
+    <script src="https://cdn.staticfile.org/Plupload/2.1.1/plupload.dev.js"></script>
+    <script src="https://cdn.staticfile.org/qiniu-js-sdk/1.0.14-beta/qiniu.js"></script>
+    <script src="{{ url_for('static',filename='common/zlqiniu.js') }}"></script>
+    <script>
+        $(function () {
+                $("#btn").click(function (event) {
+                $("#fileinp").click();
+            });
+        });
+    </script>
+    <style>
+        #btn{
+                 padding: 5px 10px;
+                 background: #F8D486;
+  	             color: #FFF;
+ 	             border: none;
+                 border-radius: 5px;}
+    </style>
+{% endblock %}
+{% block body %}
+    <div class="title">
+        <div class="left">
+            <div class="content-img">
+                 <img  id=imageload src="{{ g.front_user.avatar or url_for("static",filename="common/images/logo2.jpg")}}" alt="">
+             </div>
+            <label for="fileinp">
+                 <input type="button" id="btn" value="修改头像">
+                 <input type="file" id="fileinp" style="display: none;">
+            </label>
+        </div>
+        <div class="right">
+            个人签名：
+            <div class="sign">{{ g.front_user.signature|safe or "这个人很懒，什么都没写！"}}</div>
+        </div>
+    </div>
+    <div class="body-pecnter">
+        <div class="ueditor">
+            <script id="editor" type="text/plain" ></script>
+            <button class="btn btn-primary submit"> 发表个人签名</button>
+        </div>
+    </div>
+{% endblock %}

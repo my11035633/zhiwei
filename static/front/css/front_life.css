@@ -1,0 +1,25 @@
+a,address,b,big,blockquote,body,center,cite,code,dd,del,div,dl,dt,em,fieldset,font,form,h1,h2,h3,h4,h5,h6,html,i,iframe,img,ins,label,legend,li,ol,p,pre,small,span,strong,u,ul,var{margin:0;padding:0}
+
+.main-container {
+    display: none;
+}
+.content {
+	background-attachment: fixed;
+	height: 400px;
+}
+#content1 {
+	background: url(/static/common/images/bg2.png) no-repeat fixed;
+	background-size: 100%;
+}
+#content2 {
+	background: url(/static/common/images/bg4.png) no-repeat fixed;
+	background-size: 100%;
+}
+#content3 {
+	background: url(/static/common/images/bg.jpg) no-repeat fixed;
+	background-size: 100%;
+}
+#content4 {
+	background: url(/static/common/images/bg3.png) no-repeat fixed;
+	background-size: 100%;
+}

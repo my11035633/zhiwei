@@ -1,0 +1,107 @@
+
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, /* structural elements 结构元素 */
+dl, dt, dd, ul, ol, li, /* list elements 列表元素 */
+pre, /* text formatting elements 文本格式元素 */
+form, fieldset, legend, button, input, textarea, /* form elements 表单元素 */
+th, td /* table elements 表格元素 */
+{
+    margin: 0;
+    padding: 0;
+}
+
+
+.index-banner{
+    border-radius: 10px;
+    overflow: hidden ;
+    height:228px;
+    width: 730px;
+}
+
+.index-banner img{
+    height: 228px;
+
+}
+.nav-post {
+    width: 730px;
+    height: 50px;
+    box-shadow: 0 2px 6px 0 rgba(0,0,0,0.04);
+    border-radius: 8px;
+}
+.nav-post ul {
+    list-style: none;
+    line-height: 50px;
+}
+.nav-post ul li {
+    float: left;
+    height:50px;
+    width: 210px;
+    margin-left: 30px;
+    line-height: 50px;
+    text-align: center;
+}
+.nav-post ul li a {
+    color: #929292;
+    font-size: 15px;
+    text-decoration: none;
+}
+.nav-post ul li:hover {
+    border-bottom: 2px solid red;
+}
+.post-list-group {
+    width: 730px;
+    height: 180px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px 0 rgba(7,17,27,.1);
+    background: #fff;
+    margin-top: 15px;
+    padding-top: 20px;
+}
+.author-image-group {
+    float: left;
+    height: 70px;
+    width: 70px;
+    border: 1px solid silver;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-left: 10px;
+}
+.author-image-group img {
+    max-width: 100%;
+    height: 80px;
+    width: 80px;
+}
+.post-info-group {
+    float: left;
+    height:70px;
+    margin-left: 32px;
+}
+.image_link {
+    float: left;
+    height: 180px;
+    width: 112px;
+    line-height: 180px;
+    border: 1px solid white;
+    border-radius: 11px;
+    text-align: center;
+    overflow: hidden;
+    margin-left: 93px;
+    margin-top: -20px;
+}
+.image_link img {
+    max-height: 100%;
+    max-width: 100%;
+    border: 1px solid white;
+    border-radius: 11px;
+    overflow: hidden;
+}
+.post-info {
+    margin-top: 11px;
+}
+
+.sm-container {
+    width: 230px;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
